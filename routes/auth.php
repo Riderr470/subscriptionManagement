@@ -52,6 +52,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');
     Route::post('/cancel-subscription', [SubscribeController::class, 'cancel'])->name('subscriptions.cancel');
 
+    Route::get('/notifications', function () {
+        return view('notification.index');
+    })->name('notification.index');
+
+
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
         ->name('password.confirm');
 
