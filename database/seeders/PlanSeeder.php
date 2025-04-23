@@ -15,7 +15,6 @@ class PlanSeeder extends Seeder
     {
         //
         Plan::create([
-            'id' => '1',
             'name' => 'Basic Monthly',
             'description' => 'Basic features, billed monthly',
             'price' => 10.00,
@@ -24,7 +23,6 @@ class PlanSeeder extends Seeder
         ]);
 
         Plan::create([
-            'id' => '2',
             'name' => 'Pro Monthly',
             'description' => 'All features, billed monthly',
             'price' => 25.00,
@@ -33,7 +31,6 @@ class PlanSeeder extends Seeder
         ]);
 
         Plan::create([
-            'id' => '3',
             'name' => 'Pro Yearly',
             'description' => 'All features, billed yearly (save 20%)',
             'price' => 240.00,

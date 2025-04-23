@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -51,6 +52,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/subscriptions', [SubscribeController::class, 'index'])->name('subscriptions.index');
     Route::post('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');
     Route::post('/cancel-subscription', [SubscribeController::class, 'cancel'])->name('subscriptions.cancel');
+
+    Route::get('/notifications', function () {
+        return view('notification.index');
+    })->name('notification.index');
+
+    Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+    Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+    Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
         ->name('password.confirm');
