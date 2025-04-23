@@ -1,61 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Subscription Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This Project is A Challange Task
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Here are the steps to get this project up and running:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1.  ## Prerequisites:** (The version given below is the version I am using)
+- **PHP**: 8.2.28  
+- **Node.js**: 23.5.0  
+- **Composer**: 2.6.6  
+- **Laragon** (for serving the project locally)
 
-## Learning Laravel
+  
+3.  ## Clone the repository:
+    ```bash
+    git clone https://github.com/Riderr470/subscriptionManagement.git
+    cd [Project Name]
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4.  ## Install Dependencies
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+npm install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5.  ## Configuration
 
-## Laravel Sponsors
+```bash
+# Extract main.zip and copy its content.
+# Create .env file.
+# Paste the extracted values into your .env file.
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+6.  ## Database Setup
 
-### Premium Partners
+```bash
+php artisan migrate --seed
+```
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
--   **[Redberry](https://redberry.international/laravel-development/)**
--   **[Active Logic](https://activelogic.com)**
+7.  ## Running the Application
 
-## Contributing
+All of these commands are needed to run the projects all features
+Run the following commands in separate terminal windows or use a process manager:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Start the Laravel development server
+```bash
+php artisan serve
+```
+### 2. Start the Vite development server for frontend assets
+```bash
+npm run dev
+```
+### 3. Start the queue worker for background jobs
+```bash
+php artisan queue:work
+```
+### 4. Check if Redis is running (for redis caching)
+For windows bash:(cmd has some issue. server terminates after few minutes)
+```bash
+wsl sudo service redis-server start
+```
+For linux/ubuntu terminal:
+```bash
+sudo service redis-server start
+redis-cli ping
+# Expected response: PONG
+```
 
-## Code of Conduct
+## Features
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+✅ Project Features & Completed Tasks
+This project implements several foundational backend concepts using Laravel with mock integrations and simulated environments. The following core features have been completed, fulfilling the minimum required functionality:
 
-## Security Vulnerabilities
+🔐 Task 1: Subscription Management System (Mock Stripe Integration)
+Designed a simple subscription management flow supporting multiple plans and billing cycles.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Implemented mock logic for handling Stripe payments, including simulated success and failure scenarios.
 
-## License
+Built basic routes for subscribing, canceling, and viewing subscription status.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Demonstrated secure handling of API keys and sensitive data using environment configuration best practices.
+
+📢 Task 2: Basic Real-time Notification System (Simulated WebSocket)
+Set up Laravel event broadcasting to simulate real-time notifications (e.g., on user registration).
+
+Created a minimal frontend interface to display received notifications.
+
+Used Laravel's built-in broadcasting features without requiring third-party WebSocket services.
+
+🚀 Task 3: Product Data Caching Strategy
+Identified performance bottlenecks in fetching product details from a large dataset.
+
+Implemented caching using Laravel’s cache system (with Redis driver) to improve performance.
+
+Demonstrated performance improvement by comparing response times before and after caching.
+
+✅ Task 4: Basic Task Management System with Queues
+Built a basic task management module where users can create and view tasks.
+
+Integrated Laravel queues to handle asynchronous job processing.
+
+Configured a queued job to send a welcome email upon task creation.
