@@ -8,14 +8,15 @@ This Project is A Challange Task
 
 Here are the steps to get this project up and running:
 
-1.  ## Prerequisites:** (The version given below is the version I am using)
-- **PHP**: 8.2.28  
-- **Node.js**: 23.5.0  
-- **Composer**: 2.6.6  
-- **Laragon** (for serving the project locally)
+1.  ## Prerequisites:\*\* (The version given below is the version I am using)
 
-  
+-   **PHP**: 8.2.28
+-   **Node.js**: 23.5.0
+-   **Composer**: 2.6.6
+-   **Laragon** (for serving the project locally)
+
 3.  ## Clone the repository:
+
     ```bash
     git clone https://github.com/Riderr470/subscriptionManagement.git
     cd [Project Name]
@@ -48,23 +49,49 @@ All of these commands are needed to run the projects all features
 Run the following commands in separate terminal windows or use a process manager:
 
 ### 1. Start the Laravel development server
+
 ```bash
 php artisan serve
 ```
+
 ### 2. Start the Vite development server for frontend assets
+
 ```bash
 npm run dev
 ```
+
 ### 3. Start the queue worker for background jobs
+
 ```bash
 php artisan queue:work
 ```
-### 4. Check if Redis is running (for redis caching)
+
+### 4. Redis server needs to be Installed (for redis caching)
+
 For windows bash:(cmd has some issue. server terminates after few minutes)
+
+```bash
+wsl sudo apt update
+wsl sudo apt install redis-server
+```
+
+For linux/ubuntu terminal:
+
+```bash
+sudo apt update
+sudo apt install redis-server
+```
+
+### 5. Check if Redis is running (for redis caching)
+
+For windows bash:(cmd has some issue. server terminates after few minutes)
+
 ```bash
 wsl sudo service redis-server start
 ```
+
 For linux/ubuntu terminal:
+
 ```bash
 sudo service redis-server start
 redis-cli ping
